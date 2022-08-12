@@ -31,9 +31,7 @@
     }
     .menu-items.active{
         transform: translateX(0%);
-    }
-    .menu-items.active body{
-        overflow: hidden;
+        position: fixed;
     }
     .nav-icon{
         display: block;

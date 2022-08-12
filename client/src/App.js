@@ -22,10 +22,6 @@ function App() {
         <Route path="/translate" element={<Translate/>} />
         <Route path="/library" element={<Library/>} />
       </Routes>
-      {/* footer */}
-      <div className="footer text-lg md:text-2xl my-4">
-        Made with 💖 by VasuDevrani
-      </div>
     </div>
   );
 }

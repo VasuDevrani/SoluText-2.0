@@ -15,7 +15,6 @@ function EditorTool() {
   const updateTextDescription = (state) => {
     setEditorState(state);
   };
-  
 
   function sendData() {
     const data = convertToRaw(editorState.getCurrentContent());
@@ -25,19 +24,19 @@ function EditorTool() {
   }
   const wrapperStyle = {
     border: "2px solid #969696",
-    boxShadow: "10px 10px 3px grey"
+    boxShadow: "10px 10px 3px grey",
   };
   const toolbarStyle = {
-    borderBottom: '1px solid grey'
-  }
+    borderBottom: "1px solid grey",
+  };
   const editorStyle = {
     height: "50vh",
     padding: "1rem",
   };
 
   const showEditorModel = () => {
-    model.current.classList.toggle('active')
-  }
+    model.current.classList.toggle("active");
+  };
 
   return (
     <>
@@ -50,11 +49,11 @@ function EditorTool() {
           onEditorStateChange={updateTextDescription}
         />
       </div>
-      <div className="editor-button flex flex-row justify-center items-center my-7 container">
-        <input type="text" className="bg-black"/>
+      <div className="flex flex-row justify-center items-center my-7">
+        <input type="text" className= "mt-10 mr-4 rounded-md p-4 border-2 shadow-md outline-none" placeholder="title here..."/>
         <button className="btn mt-10" onClick={showEditorModel}>
-          Submit
-        </button> 
+          Add as Note
+        </button>
       </div>
     </>
   );

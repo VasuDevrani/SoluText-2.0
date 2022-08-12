@@ -10,3 +10,22 @@
 .tool-class{
   border: 2px solid grey;
 }
+.input-box{
+  /* width: 30vw; */
+  width: 35vw;
+  height: 35vh;
+  border: 2px solid black;
+}
+.lib-section{
+  width: 49%;
+  display: inline-block;
+}
+#languages{
+  outline: none;
+}
+@media screen and (max-width:768px) {
+  .input-box{
+    margin-top: 30px;
+    width: 50vw;
+  }
+}

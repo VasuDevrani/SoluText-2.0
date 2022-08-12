@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
 .btn{
-  @apply px-5 text-sm sm:text-lg md:text-xl bg-site-blue py-2 rounded-md text-white font-Inter hover:bg-site-dark-blue
+  @apply px-5 text-sm sm:text-lg md:text-xl bg-site-blue py-2 rounded-md text-white font-Inter hover:bg-site-dark-blue;
+  transition: all 200ms ease;
+  
+}
+.btn:active{
+  transform: scale(0.9);
 }
 ::-webkit-scrollbar{
   display: none;
