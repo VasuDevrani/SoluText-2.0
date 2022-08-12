@@ -1,0 +1,12 @@
+.home-options {
+  transition: all 200ms ease;
+}
+.home-options:hover {
+  transform: scale(1.1);
+}
+.wrapperClassName{
+  height: 50vh;
+}
+.tool-class{
+  border: 2px solid grey;
+}

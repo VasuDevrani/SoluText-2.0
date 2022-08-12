@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn{
+  @apply px-5 text-sm sm:text-lg md:text-xl bg-site-blue py-2 rounded-md text-white font-Inter hover:bg-site-dark-blue
+}
+::-webkit-scrollbar{
+  display: none;
+}
