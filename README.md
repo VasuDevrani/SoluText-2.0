@@ -9,7 +9,7 @@ Fatures included:
   - Advanced Note Saving with delete and edit feature
   - Clean UI
   
-***hosted here*** - https://papaya-biscochitos-c6c5db.netlify.app/auth
+***hosted here*** - https://papaya-biscochitos-c6c5db.netlify.app/
 
 ### I would appeciate any bug smash or suggestion
 
