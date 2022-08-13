@@ -6,8 +6,8 @@ const router = express.Router();
 const {addNotes, updateNotes, getAllNotes, getNote, deleteNote} = require('../controllers/NoteController');
 
 router.post('/add', addNotes);
-router.get('/getOne', getNote);
-router.get('/getall', getAllNotes);
+router.post('/getOne', getNote);
+router.post('/getall', getAllNotes);
 router.put('/update', updateNotes);
 router.put('/delete', deleteNote);
 

@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { FaHamburger, FaBackward } from "react-icons/fa";
 import { useState } from "react";
 import { useRef } from "react";
+import { Store } from "../Store";
+import { toast } from "react-toastify";
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
   const menuSet = useRef(null);
 
+  const {state, dispatch} = useContext(Store);
+  const {userInfo} = state;
+
+  const navigate = useNavigate();
+
   const changeMenu = () => {
     setMenu(!menu);
     menuSet.current.classList.toggle("active");
   };
+
+  const handleSignOut = () => {
+    dispatch({type: "USER_SIGNOUT"});
+    toast.warning('User successfully signed out')
+    navigate('/auth');
+  }
 
   return (
     <div className="navbar container flex flex-row justify-between items-center py-3">
@@ -22,7 +35,15 @@ export default function Navbar() {
         </h1>
       </Link>
       <div className="menu flex flex-row items-center justify-between">
-        <button className="mx-3 btn">Sign In</button>
+        {
+          userInfo ? (
+              <button className="mx-3 btn" onClick={handleSignOut}>Sign Out</button>
+          ) : (
+            <Link to='/auth'>
+              <button className="mx-3 btn">Sign In</button>
+            </Link>
+          )
+        }
         <div
           className="menu-items list-none text-md sm:text-lg md:text-xl text-site-black font-Inter"
           ref={menuSet}

@@ -20,10 +20,10 @@ const loginUser = async (req, res) => {
           token: generateToken(user),
         });
       } else {
-        res.status(500).json({ message: "Password didn't match" });
+        res.status(404).json({ message: "Password didn't match" });
       }
     } else {
-      res.status(500).json({ message: "no such user found" });
+      res.status(404).json({ message: "no such user found" });
     }
   } catch (err) {
     res.status(404).json({ message: err.message});

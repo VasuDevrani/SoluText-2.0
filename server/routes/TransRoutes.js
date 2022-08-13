@@ -4,8 +4,8 @@ const {addTrans, getAllTrans, updateTrans, getTrans, deleteTrans} = require('../
 const router = express.Router();
 
 router.post('/add', addTrans);
-router.get('/getAll', getAllTrans);
-router.get('/getOne', getTrans);
+router.post('/getall', getAllTrans);
+router.post('/getOne', getTrans);
 router.put('/update', updateTrans)
 router.put('/delete', deleteTrans)
 
