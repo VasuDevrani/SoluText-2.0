@@ -18,7 +18,6 @@ export default function Library() {
         userId: userInfo._id,
       });
       setNotes(data);
-      console.log(data);
     };
 
     getData();
