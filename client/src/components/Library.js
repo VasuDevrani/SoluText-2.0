@@ -17,7 +17,7 @@ export default function Library() {
       const { data } = await axios.post("/note/getall", {
         userId: userInfo._id,
       });
-      setNotes(data);
+      setNotes(data)
     };
 
     getData();
