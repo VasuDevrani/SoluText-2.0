@@ -1,9 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import Axios from "axios";
-import { Store } from "../Store";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
 export default function Translate() {
 
@@ -13,11 +10,6 @@ export default function Translate() {
     to: "hi",
     from: "en",
   });
-
-  const { state, dispatch } = useContext(Store);
-  const { userInfo } = state;
-
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setTransState({ ...transState, [e.target.name]: e.target.value });
