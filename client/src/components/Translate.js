@@ -53,31 +53,6 @@ export default function Translate() {
       });
   };
 
-  const saveTrans = async () => {
-    if (userInfo === null) {
-      toast.error("Please login first");
-      navigate("/auth");
-      return;
-    }
-
-    try {
-      const data = {
-        userId: userInfo._id,
-        oriText: transState.text,
-        transText: transState.translation,
-        from: transState.from,
-        to: transState.to,
-      };
-      const res = await Axios.post("/trans/add", data);
-      // console.log(res);
-      toast.success("Translation saved successfully");
-      navigate("/library");
-    } catch (err) {
-      console.log(err);
-      toast.error("Please try again, refresh page");
-    }
-  };
-
   return (
     <div className="container trans flex flex-col h-60 my-10">
       <div className=" mx-10 trans-text flex flex-col justify-center items-center p-3">
@@ -129,9 +104,6 @@ export default function Translate() {
         </div>
         <button className="btn my-3" onClick={handleTrans}>
           Translate Text
-        </button>
-        <button className="btn" onClick={saveTrans}>
-          Save
         </button>
       </div>
     </div>

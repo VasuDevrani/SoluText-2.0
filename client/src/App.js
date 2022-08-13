@@ -12,7 +12,6 @@ import Library from "./components/Library";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UpdateEditor from "./components/UpdateEditor";
-import UpdateTrans from "./components/UpdateTrans";
 
 function App() {
   const [user, setUser] = useState(true);
@@ -30,7 +29,6 @@ function App() {
         <Route path="/library" element={<Library/>} />
         <Route path="/auth" element={<Auth/>} />
         <Route path="/editor/:id" element={<UpdateEditor/>} />
-        <Route path="/trans/:id" element={<UpdateTrans/>} />
       </Routes>
     </div>
   );

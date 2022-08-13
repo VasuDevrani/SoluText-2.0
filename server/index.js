@@ -6,7 +6,6 @@ const dotenv = require("dotenv");
 
 // routes
 const UserRouter = require("./routes/UserRoutes");
-const TransRouter = require('./routes/TransRoutes')
 const NotesRouter = require('./routes/NotesRoutes')
 
 dotenv.config();
@@ -22,7 +21,6 @@ app.use(cors());
 
 // routers
 app.use('/user', UserRouter);
-app.use('/trans', TransRouter);
 app.use('/note', NotesRouter);
 
 mongoose
