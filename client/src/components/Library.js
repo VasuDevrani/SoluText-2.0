@@ -14,7 +14,7 @@ export default function Library() {
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.post("/note/getall", {
+      const { data } = await axios.post("https://solutext.herokuapp.com/note/getall", {
         userId: userInfo._id,
       });
       setNotes(data)
@@ -25,9 +25,9 @@ export default function Library() {
 
   async function handleTrashOne(id) {
     try {
-      await axios.put("/note/delete", { _id: id });
+      await axios.put("https://solutext.herokuapp.com/note/delete", { _id: id });
 
-      const { data } = await axios.post("/note/getall", {
+      const { data } = await axios.post("https://solutext.herokuapp.com/note/getall", {
         userId: userInfo._id,
       });
       setNotes(data);

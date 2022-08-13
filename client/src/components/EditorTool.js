@@ -49,7 +49,7 @@ function EditorTool() {
         title: title,
         notes: JSON.stringify(data)
       }
-      const res = await Axios.post('/note/add', newNote);
+      const res = await Axios.post('https://solutext.herokuapp.com/note/add', newNote);
       toast.success('New note created')
       navigate('/library')
 
@@ -83,7 +83,7 @@ function EditorTool() {
           onEditorStateChange={updateTextDescription}
         />
       </div>
-      <div className="flex flex-row justify-center items-center my-7">
+      <div className="container flex flex-row justify-center items-center my-7">
         <input type="text" className= "mt-10 mr-4 rounded-md p-4 border-2 shadow-md outline-none" placeholder="title here..." value={title} onChange={(e) => setTitle(e.target.value)}/>
         <button className="btn mt-10" onClick={addNote}>
           Add as Note

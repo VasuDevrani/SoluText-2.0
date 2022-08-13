@@ -50,7 +50,7 @@ export default function Auth() {
     }
     // console.log(userData);
     try {
-      const { data } = await Axios.post("/user/register", userData);
+      const { data } = await Axios.post("https://solutext.herokuapp.com/user/register", userData);
 
       ctxDispatch({ type: "USER_SIGNIN", payload: data });
       localStorage.setItem("userinfo", JSON.stringify(data));
@@ -74,7 +74,7 @@ export default function Auth() {
     // console.log(preUser)
 
     try {
-      const { data } = await Axios.post("/user/login", preUser);
+      const { data } = await Axios.post("https://solutext.herokuapp.com/user/login", preUser);
       ctxDispatch({ type: "USER_SIGNIN", payload: data});
       localStorage.setItem("userinfo", JSON.stringify(data));
 

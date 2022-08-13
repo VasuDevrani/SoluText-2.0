@@ -24,7 +24,7 @@ function UpdateEditor() {
   useEffect(() => {
     async function getData() {
       try {
-        const { data } = await axios.post("/note/getOne", { _id: noteId });
+        const { data } = await axios.post("https://solutext.herokuapp.com/note/getOne", { _id: noteId });
 
         setNotedata(data);
         setTitle(data.title);
@@ -55,7 +55,7 @@ function UpdateEditor() {
     try {
       console.log(noteData);
 
-      await axios.put("/note/update", noteData);
+      await axios.put("https://solutext.herokuapp.com/note/update", noteData);
       toast.success('note successfully edited');
 
       navigate('/library')

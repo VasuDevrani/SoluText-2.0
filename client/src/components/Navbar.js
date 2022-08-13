@@ -63,7 +63,7 @@ export default function Navbar() {
               Translator
             </li>
           </Link>
-          <Link to="/library">
+          <Link to={userInfo ? '/library' : '/auth'}>
             <li className="mx-3 nav-links cursor-pointer hover:text-black">
               Library
             </li>

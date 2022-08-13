@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import Axios from "axios";
+import { toast } from "react-toastify";
 
 export default function Translate() {
 
@@ -16,6 +17,9 @@ export default function Translate() {
   };
 
   const handleTrans = () => {
+    toast.success('No more req pls, Im using free API, it demands payment now, SORRY')
+    return;
+    
     const encodedParams = new URLSearchParams();
     encodedParams.append("source_language", transState.from);
     encodedParams.append("target_language", transState.to);
@@ -53,7 +57,7 @@ export default function Translate() {
             type="text"
             placeholder="enter text"
             name="text"
-            className="input-box mx-3 p-2 border"
+            className="input-box mx-3 p-2 border rounded-xl"
             value={transState.text}
             onChange={handleChange}
           />
@@ -61,7 +65,7 @@ export default function Translate() {
             type="text"
             placeholder="translate"
             name="translation"
-            className="input-box mx-3 p-2 border"
+            className="input-box mx-3 p-2 border rounded-xl"
             value={transState.translation}
             onChange={handleChange}
           />
